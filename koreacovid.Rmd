@@ -27,19 +27,26 @@ state of a patient must be died or alive - we adjust that as well
   
 # Your Question - Is dying independent of sex?
 
+# Methods
+result ~ categorical 
+sex ~ categorical 
 
+since result and sex are both categorical we should use the cat~cat helper file. 
 
+$H_0$ Dying is independent of sex.    
+$H_A$ Dying is dependent of sex.     
 
 
 
 ## Graphical results - use ggplot commands to do this  
 
+```{r}
+barchartGC(~result + Sex,data=kRdata)
+barchartGC(~result + Sex,data=kRdata, type="percent")
 
+```
 
-  
-
-
-
+the barchart shows that males die at a higher percentage than females. 
 
 
   
