@@ -52,11 +52,24 @@ the barchart shows that males die at a higher percentage than females.
   
 ## Numerical results
 
+```{r}
+table1 <- xtabs(~result + Sex, data=kRdata)
+rowPerc(table1)
+colPerc(table1)
+```
+
+among the people who died 64% were males and 36% were females. 2:1
 
 ## Inferential results 
 
+```{r}
+chisq.test(table1)
+chisqtestGC(table1)
+fisher.test(table1)
+```
 
-
+p value for the chi-squared test = 0.001 so we reject the null hypothesis so that means there is a difference between the two just by looking at the numbers. the fisher's exact test odd ratio 2.3 so males are 2.3X more likely to die to covid than women. 
 
 ## Conclusions
 
+Is dying independent of sex? Because of the barcharts and tables, males are more likley to die than females according to the data. the data was from south korea 2022. so we can conclude that deaths from covid are dependent on sex. p value for the chi-squared test = 0.001
